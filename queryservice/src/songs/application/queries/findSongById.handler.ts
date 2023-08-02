@@ -1,7 +1,7 @@
 import { Inject } from '@nestjs/common';
 import { IQueryHandler, IQueryResult, QueryHandler } from '@nestjs/cqrs';
 import { ISongRepository, InjectionToken } from 'src/songs/domain';
-import { FindSongByIdQuery } from 'src/songs/domain/queries/findSongById.query';
+import { FindSongByIdQuery } from 'src/songs/application/queries/FindSongById.query';
 
 export class FindSongResult implements IQueryResult {
   constructor(

@@ -1,13 +1,18 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { QueryBus } from '@nestjs/cqrs';
-import { FindSongByIdQuery } from 'src/songs/domain/queries/findSongById.query';
+import { FindSongByIdQuery } from 'src/songs/application/queries/FindSongById.query';
+import FindSongByIdDTOResponse from './dto/FindSongById.dto.response';
+import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('songs')
 export class SongController {
   constructor(private queryBus: QueryBus) {}
 
   @Get('song/:id')
-  async getById(@Param('id') id: string) {
+  @ApiResponse({
+    type: FindSongByIdDTOResponse,
+  })
+  async getById(@Param('id') id: string): Promise<FindSongByIdDTOResponse> {
     return this.queryBus.execute(new FindSongByIdQuery(id));
   }
 }

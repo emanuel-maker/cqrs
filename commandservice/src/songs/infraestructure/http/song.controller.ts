@@ -1,12 +1,12 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { CreateSongDto } from './dto/song.dto';
+import { CreateSongDto } from './dto/CreateSong.dto.response';
 import { CommandBus } from '@nestjs/cqrs';
-import { CreateSongCommand } from 'src/songs/domain/commands/createSong.command';
+import { CreateSongCommand } from 'src/songs/domain/commands/CreateSong.command';
 
 @Controller('songs')
 export class SongController {
   constructor(private commandBus: CommandBus) {}
-  @Post()
+  @Post('song')
   async create(@Body() createSongDto: CreateSongDto): Promise<void> {
     this.commandBus.execute(new CreateSongCommand(createSongDto));
   }

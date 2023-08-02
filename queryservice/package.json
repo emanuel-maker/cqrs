@@ -26,6 +26,7 @@
     "@nestjs/cqrs": "^10.0.3",
     "@nestjs/mongoose": "^10.0.1",
     "@nestjs/platform-express": "^10.1.0",
+    "@nestjs/swagger": "^7.1.6",
     "@types/amqplib": "^0.10.1",
     "amqplib": "^0.10.3",
     "class-transformer": "^0.5.1",

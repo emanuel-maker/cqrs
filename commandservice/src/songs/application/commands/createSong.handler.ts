@@ -6,7 +6,7 @@ import {
   ISongRepository,
   InjectionToken,
 } from '../../domain';
-import { CreateSongCommand } from 'src/songs/domain/commands/createSong.command';
+import { CreateSongCommand } from 'src/songs/domain/commands/CreateSong.command';
 
 @CommandHandler(CreateSongCommand)
 export class CreateSongHandler implements ICommandHandler<CreateSongCommand> {

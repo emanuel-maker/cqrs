@@ -20,6 +20,10 @@ export class SongRepository implements ISongRepository {
 
   async findById(id: string) {
     const document = await this.songModel.findById(id).exec();
+    console.log(
+      '🚀 ~ file: song.repository.ts:23 ~ SongRepository ~ findById ~ document:',
+      document,
+    );
     if (!document) {
       throw new NotFoundException('Documento no encontrado');
     }

@@ -5,8 +5,8 @@ import RabbitMQ from './infraestructure/rabbitmq/rabbimq.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Song, SongSchema } from './infraestructure/mongodb/model/song.model';
 import { CqrsModule } from '@nestjs/cqrs';
-import { FindSongByIdHandler } from './application/queries/findSongById.handler';
-import CreateSongEvent from './application/events/createSong.event';
+import { FindSongByIdHandler } from './application/queries/FindSongById.handler';
+import CreateSongEventHandler from './application/events/CreateSong.handler';
 
 const handlers = [FindSongByIdHandler];
 
@@ -27,7 +27,7 @@ const handlers = [FindSongByIdHandler];
     },
     {
       provide: 'ICreateSongEvent',
-      useClass: CreateSongEvent,
+      useClass: CreateSongEventHandler,
     },
   ],
   exports: [],

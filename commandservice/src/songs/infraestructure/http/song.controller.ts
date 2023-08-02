@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { CreateSongDto } from './dto/CreateSong.dto.response';
+import { CreateSongDto } from './dto/CreateSong.dto.request';
 import { CommandBus } from '@nestjs/cqrs';
-import { CreateSongCommand } from 'src/songs/domain/commands/CreateSong.command';
+import { CreateSongCommand } from 'src/songs/application/commands/CreateSong.command';
 
 @Controller('songs')
 export class SongController {

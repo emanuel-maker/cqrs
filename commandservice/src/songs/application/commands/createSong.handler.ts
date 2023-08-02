@@ -1,12 +1,8 @@
 import { Inject, Logger } from '@nestjs/common';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import {
-  EventBusMessages,
-  IEventBus,
-  ISongRepository,
-  InjectionToken,
-} from '../../domain';
-import { CreateSongCommand } from 'src/songs/domain/commands/CreateSong.command';
+import { EventBusMessages, IEventBus, ISongRepository } from '../../domain';
+import { InjectionToken } from '../injection.token';
+import { CreateSongCommand } from './CreateSong.command';
 
 @CommandHandler(CreateSongCommand)
 export class CreateSongHandler implements ICommandHandler<CreateSongCommand> {

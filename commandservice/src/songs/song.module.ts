@@ -4,7 +4,7 @@ import { SongRepository } from './infraestructure/mongodb/song.repository';
 import RabbitMQ from './infraestructure/rabbitmq/rabbimq.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Song, SongSchema } from './infraestructure/mongodb/model/song.model';
-import { CreateSongHandler } from './application/commands/CreateSong.handler';
+import { CreateSongHandler } from '../songs/application/commands/create.song/CreateSong.handler';
 import { CqrsModule } from '@nestjs/cqrs';
 
 const handlers = [CreateSongHandler];

@@ -1,9 +1,9 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
-import ISongRepository from 'src/songs/domain/song.repository';
+import ISongRepository from '../../domain/song.repository';
 import { Song, SongDocument } from './model/song.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ISong } from 'src/songs/domain';
+import { ISong } from '../../domain';
 
 @Injectable()
 export class SongRepository implements ISongRepository {

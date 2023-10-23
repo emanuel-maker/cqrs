@@ -1,5 +1,5 @@
-import IEventBus, { EventBusMessages } from './song.eventbus';
+import IEventBus from './song.eventbus';
 import ISongRepository from './song.repository';
 import ISong, { Song } from './song';
 
-export { Song, EventBusMessages, IEventBus, ISongRepository, ISong };
+export { Song, IEventBus, ISongRepository, ISong };

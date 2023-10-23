@@ -1,4 +1,4 @@
-import { FindSongResult } from 'src/songs/application/queries/FindSongById.handler';
+import { FindSongResult } from '../../../application/queries/FindSongById.handler';
 import { ApiProperty } from '@nestjs/swagger';
 
 class FindSongByIdDTOResponse extends FindSongResult {

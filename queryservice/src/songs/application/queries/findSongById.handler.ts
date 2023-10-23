@@ -1,18 +1,15 @@
 import { Inject } from '@nestjs/common';
 import { IQueryHandler, IQueryResult, QueryHandler } from '@nestjs/cqrs';
-import { ISongRepository, InjectionToken } from 'src/songs/domain';
-import { FindSongByIdQuery } from 'src/songs/application/queries/FindSongById.query';
+import { ISongRepository, InjectionToken } from '../../domain';
+import { FindSongByIdQuery } from './FindSongById.query';
 
 export class FindSongResult implements IQueryResult {
   constructor(
-    readonly song: Readonly<{
-      title: string;
-      description: string;
-      version: number;
-    }>,
+    readonly title: string,
+    readonly description: string,
+    readonly version: number,
   ) {}
 }
-
 @QueryHandler(FindSongByIdQuery)
 export class FindSongByIdHandler
   implements IQueryHandler<FindSongByIdQuery, FindSongResult>
@@ -23,7 +20,10 @@ export class FindSongByIdHandler
   ) {}
 
   async execute(query: FindSongByIdQuery): Promise<FindSongResult> {
-    const song = await this.songRepository.findById(query.id);
-    return new FindSongResult(song);
+    const { title, description, version } = await this.songRepository.findById(
+      query.id,
+    );
+    // ...
+    return new FindSongResult(title, description, version);
   }
 }

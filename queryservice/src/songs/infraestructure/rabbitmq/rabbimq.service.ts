@@ -1,8 +1,8 @@
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import client, { Channel, Connection } from 'amqplib';
 import { Logger } from '@nestjs/common';
-import { ICreateSongEvent } from 'src/songs/domain/events/CreateSong.event';
-import { InjectionToken } from 'src/songs/domain';
+import { InjectionToken } from '../../domain';
+import { ICreateSongEvent } from 'src/songs/application/events/CreateSong.event';
 
 @Injectable()
 class RabbitMQ implements OnModuleInit {

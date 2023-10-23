@@ -1,6 +1,6 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { QueryBus } from '@nestjs/cqrs';
-import { FindSongByIdQuery } from 'src/songs/application/queries/FindSongById.query';
+import { FindSongByIdQuery } from '../../application/queries/FindSongById.query';
 import FindSongByIdDTOResponse from './dto/FindSongById.dto.response';
 import { ApiResponse } from '@nestjs/swagger';
 

@@ -13,7 +13,10 @@ export class SongRepository implements ISongRepository {
   ) {}
   async persist(song: ISong): Promise<void> {
     await this.songModel.create({
-      ...song,
+      title: song.title.value,
+      authorId: song.authorId.value,
+      description: song.description.value,
+      version: song.version.value,
     });
     return;
   }

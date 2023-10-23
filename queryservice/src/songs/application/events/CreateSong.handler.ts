@@ -1,5 +1,5 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { ISong, ISongRepository, InjectionToken } from 'src/songs/domain';
+import { ISong, ISongRepository, InjectionToken } from '../../domain';
 import { ICreateSongEvent } from './CreateSong.event';
 
 @Injectable()

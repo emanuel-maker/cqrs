@@ -1,4 +1,4 @@
-import { ISong } from 'src/songs/domain';
+import { ISong } from '../../domain';
 
 export interface ICreateSongEvent {
   execute: (song: ISong) => Promise<void>;
